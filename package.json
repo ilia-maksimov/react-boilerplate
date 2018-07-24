@@ -2,11 +2,13 @@
   "name": "react-boilerplate",
   "version": "1.0.0",
   "description": "react, redux, typescript",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --mode development --hot --progress --color --port 8080 --open",
-    "build": "webpack -p --progress --colors"
+    "start": "webpack-dev-server --config ./webpackConfig/webpack.config.dev.js --mode development",
+    "build": "webpack --progress --config ./webpackConfig/webpack.config.prod.js --mode production",
+    "postinstall": "npm run build",
+    "linter": "eslint . --format junit",
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --coverage --verbose --watch"
   },
   "repository": {
     "type": "git",
@@ -18,34 +20,141 @@
     "url": "https://github.com/ilia-maksimov/react-boilerplate/issues"
   },
   "devDependencies": {
-    "@types/react": "^16.4.6",
-    "@types/react-dom": "^16.0.6",
-    "@types/react-redux": "^6.0.4",
-    "@types/react-router": "^4.0.29",
-    "@types/react-router-redux": "^5.0.15",
-    "@types/webpack": "^4.4.7",
-    "@types/webpack-env": "^1.13.6",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "file-loader": "^1.1.11",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "react-hot-loader": "^4.3.3",
-    "redux-devtools-extension": "^2.13.5",
-    "ts-loader": "^4.4.2",
-    "typescript": "^2.9.2",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.16.2",
-    "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "@types/classnames": "2.2.3",
+    "@types/jest": "22.2.3",
+    "@types/node": "9.6.5",
+    "@types/redux-devtools": "3.0.42",
+    "@types/redux-devtools-extension": "2.13.2",
+    "awesome-typescript-loader": "5.0.0",
+    "babel-core": "6.26.0",
+    "babel-jest": "22.4.3",
+    "babel-loader": "7.1.4",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-plugin-transform-regenerator": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "0.28.11",
+    "enzyme": "3.3.0",
+    "enzyme-adapter-react-16": "1.1.1",
+    "enzyme-to-json": "3.3.3",
+    "extract-text-webpack-plugin": "3.0.2",
+    "file-loader": "1.1.11",
+    "font-awesome-loader": "1.0.2",
+    "html-webpack-plugin": "3.2.0",
+    "identity-obj-proxy": "3.0.0",
+    "image-webpack-loader": "^4.3.0",
+    "jest": "22.4.3",
+    "jsdoc": "3.5.5",
+    "jsdom": "11.8.0",
+    "jsdom-global": "3.0.2",
+    "node-sass": "^4.9.0",
+    "postcss": "6.0.21",
+    "postcss-browser-reporter": "0.5.0",
+    "postcss-cssnext": "3.0.2",
+    "postcss-import": "11.0.0",
+    "postcss-loader": "2.1.4",
+    "postcss-reporter": "5.0.0",
+    "postcss-url": "7.3.2",
+    "q": "1.5.1",
+    "react-test-renderer": "16.3.2",
+    "redux-mock-store": "1.5.1",
+    "sass-loader": "6.0.7",
+    "source-map-loader": "0.2.3",
+    "style-loader": "0.19.1",
+    "ts-jest": "22.4.4",
+    "ts-loader": "3.3.1",
+    "tslint": "5.9.1",
+    "typescript": "2.8.1",
+    "typings-for-css-modules-loader": "1.7.0",
+    "url-loader": "0.6.2",
+    "webpack": "4.6.0",
+    "webpack-cli": "^2.1.5",
+    "webpack-command": "^0.2.0",
+    "webpack-dev-middleware": "2.0.6",
+    "webpack-dev-server": "3.1.3",
+    "webpack-hot-middleware": "2.22.1",
+    "webpack-merge": "4.1.2",
+    "ws": "4.0.0"
   },
   "dependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "react-redux": "^5.0.7",
-    "react-router": "^4.3.1",
-    "react-router-redux": "^4.0.8",
-    "redux": "^4.0.0",
-    "styled-components": "^3.3.3"
+    "@types/codemirror": "0.0.55",
+    "@types/react": "16.0.35",
+    "@types/react-dom": "16.0.3",
+    "@types/react-redux": "6.0.0",
+    "@types/react-router-dom": "4.2.5",
+    "@types/react-select": "1.2.6",
+    "babel-polyfill": "6.26.0",
+    "body-parser": "latest",
+    "classnames": "2.2.5",
+    "codemirror": "5.35.0",
+    "express": "latest",
+    "express-session": "1.15.6",
+    "font-awesome": "4.7.0",
+    "js-yaml": "3.10.0",
+    "jsonwebtoken": "8.1.1",
+    "method-override": "latest",
+    "qs": "6.5.1",
+    "react": "16.3.2",
+    "react-codemirror2": "4.2.0",
+    "react-dom": "16.3.2",
+    "react-fa": "5.0.0",
+    "react-fontawesome": "1.6.1",
+    "react-hot-loader": "next",
+    "react-redux": "5.0.6",
+    "react-router": "4.2.0",
+    "react-router-dom": "4.2.2",
+    "react-router-redux": "next",
+    "react-select": "1.2.1",
+    "redux": "3.7.2",
+    "redux-saga": "0.16.0",
+    "simple-oauth2": "1.5.0"
+  },
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src/client"
+    ],
+    "testEnvironment": "node",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "transform": {
+      "^.+\\.(ts|tsx)?$": "ts-jest"
+    },
+    "setupFiles": [
+      "<rootDir>/setupJest/setup.ts"
+    ],
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/client/**/*.{ts,tsx}",
+      "!src/client/**/*.{d,action,reducer}.ts",
+      "!src/client/**/modal.component.tsx",
+      "!src/client/**/index.{ts,tsx}",
+      "!src/client/**/store/**",
+      "!src/client/**/consts/**"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    }
+  },
+  "globals": {
+    "ts-jest": {
+      "useBabelrc": true
+    }
   }
 }

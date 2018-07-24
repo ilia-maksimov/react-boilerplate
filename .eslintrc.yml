@@ -1,0 +1,19 @@
+env:
+  node: true
+  browser: true
+extends: 'airbnb'
+rules:
+  indent:
+    - warn
+    - 4
+    - SwitchCase: 1
+  quotes:
+    - warn
+    - single
+  strict:
+    - warn
+    - safe
+  max-len:
+    - warn
+    - code: 90
+    - ignoreComments: true

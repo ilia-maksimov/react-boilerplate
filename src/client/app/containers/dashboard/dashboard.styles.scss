@@ -1,0 +1,10 @@
+
+@import './../../styles/colors';
+
+.boards_area {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 60px;
+}

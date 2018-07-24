@@ -1,0 +1,48 @@
+// ------- common colors ------->
+$WHITE: rgb(255, 255, 255);
+$BLACK: rgb(0, 0, 0);
+$GREY-245: rgb(245, 245, 245);
+$GREY-68: rgb(68, 68 ,68);
+$GREY-204: rgb(204, 204, 204);
+$GREY-158: rgb(158, 158, 158);
+$GREY-168: rgb(168, 168, 168);
+$MAIN_HEADER_COLOR: rgb(74, 74, 74);
+// ------- text ------->
+$TEXT_COLOR_LIGHT: $WHITE;
+$TEXT_COLOR_LIGHT-GREY: $GREY-158;
+$TEXT_COLOR_DARK: $GREY-68;
+$TEXT_COLOR_LIGHT_DARK: #b8c7ce;
+$TEXT_COLOR_RED: #DD4B39;
+// ------- buttons ------->
+$RED: #dd4b39;
+$ORANGE: #f0ad4e;
+$GREEN: #7f993a;
+$AQUA: #00c0ef;
+$LIGHT_BLUE: #5bc0de;
+$BLUE: #337ab7;
+$VIOLET: #605CA8;
+$GREY: #4a4a4a;
+$LIGHT_GREY: $GREY-204;
+// ------- project board ------->
+$SUCCESS: #7f993a;
+$FAILURE: #e66777;
+$WARNING: #f39c12;
+$INFO: #00c0ef;
+$QUEUE: #9b9b9b;
+$ABORTED: #9b9b9b;
+$IS_BUILDING: #605ca8;
+// ------- borders colors ------->
+$BORDER_COLOR: #d2d6de;
+// ------- header ------->
+$HEADER_COLOR: #3c8dbc;
+$LOGO_COLOR: #367fa9;
+// ------- backgrounds ------->
+$ACCORDION_BACKGROUND: $GREY-245;
+$SIDEBAR_BACKGROUND: #222d32;
+$SIDEBAR_ACTIVE_ELEMENTS_BACKGROUND: #1e282c;
+// -------- line --------------->
+$LINE: #d8d8d8; 
+//----------------------------->
+$BLUE_GENERAL: #39c2d7;
+$GREEN_GENERAL: #A3C644;
+$RED_GENERAL: #dd4b39;
